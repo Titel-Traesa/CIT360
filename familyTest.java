@@ -1,7 +1,7 @@
 package codingtopics;
 import java.io.*;
 //import java.text.ParseException;
-//import java.util.*;
+import java.util.*;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -86,14 +86,17 @@ public class familyTest {
 			mbr.isFemale = (boolean)objIn.get("isFemale");
 			mbr.isParent = (boolean)objIn.get("isParent");
 			
-			/*I couldn't get the array to work and didn't want to spend more time on it
-			*JSONArray getHobbies = (JSONArray)objIn.get("hobbies");
-			*Iterator<String> iterator = getHobbies.iterator();
-			*Integer i=0;
-			*while(iterator.hasNext()){
-			*mbr.hobbies[i]=iterator.next();
+			
+			JSONArray getHobbies = (JSONArray)objIn.get("hobbies");
+			Iterator<String> iterator = getHobbies.iterator();
+			Integer i=0;
+			while(iterator.hasNext()){
+				
+			String aHobbie =iterator.next();
+			System.out.println(aHobbie);
+			mbr.hobbies[i]= aHobbie;
 			i=i+1;
-			}*/
+			}
 			//mbr.hobbies = (String [])objIn.get("hobbies");//how do I cast the java array???
 		
 		}
