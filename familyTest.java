@@ -66,7 +66,7 @@ public class familyTest {
 		{
 			e.printStackTrace();
 		}
-		
+		System.out.println("Here is the Json Object that was exported");
 		System.out.println(obj);
 	}
 	
@@ -77,7 +77,7 @@ public class familyTest {
 		try (Reader reader = new FileReader("/Users/ctrae/Desktop/CIT360/user.json")){
 			
 			JSONObject objIn = (JSONObject)parser.parse(reader);
-			System.out.println("Here is the JSON imported FILE");
+			System.out.println("\nHere is the JSON imported FILE");
 			System.out.println(objIn);
 			
 			familyMembers mbr = new familyMembers();
@@ -93,11 +93,12 @@ public class familyTest {
 			while(iterator.hasNext()){
 				
 			String aHobbie =iterator.next();
-			System.out.println(aHobbie);
+			mbr.hobbies= new String[4];
+			//System.out.println(aHobbie);
 			mbr.hobbies[i]= aHobbie;
-			i=i+1;
+			i++;
 			}
-			//mbr.hobbies = (String [])objIn.get("hobbies");//how do I cast the java array???
+
 		
 		}
 		catch(IOException e) {
