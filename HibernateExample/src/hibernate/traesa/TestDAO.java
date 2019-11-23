@@ -86,6 +86,23 @@ public class TestDAO {
         }
     }
     
+    public void addStudent(int id, String name, int grade){
+        try{
+            session=factory.openSession();
+            session.getTransaction().begin();
+            students newStudent = new students(id,name,grade);
+            session.saveOrUpdate(newStudent);
+            session.getTransaction().commit();
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        finally{
+        session.close();
+                }
+    }
+     
 
 }
 

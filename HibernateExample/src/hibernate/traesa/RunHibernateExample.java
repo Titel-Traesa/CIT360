@@ -9,21 +9,26 @@ package hibernate.traesa;
 
 /**
  *
- * @author ctrae
+ * @author traesa titel
  */
 import java.util.*;
 
 public class RunHibernateExample {
 
     public static void main(String[] args) {
-        System.out.println("Why is nothing happening?");
 
         TestDAO t = TestDAO.getInstance();
-
         List<students> s = t.getStudents();
         for (students i : s) {
             System.out.println(i);
         }
+        
+        t.addStudent(9,"James Monroe",6);
+        List<students> s2 = t.getStudents();
+        for (students i : s2) {
+            System.out.println(i);
+        }
+        
 
         System.out.println(t.getStudent(1));
         

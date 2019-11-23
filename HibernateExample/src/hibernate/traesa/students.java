@@ -17,8 +17,8 @@ import javax.persistence.*;
 @Entity
 @Table(name="student")
 public class students {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
     
@@ -27,6 +27,17 @@ public class students {
             
     @Column(name="grade")
     private int grade;
+    
+    public students(){
+        
+    }
+    
+    public students (int id, String name, int grade){
+        super();
+        this.id=id;
+        this.name=name;
+        this.grade = grade;
+    }
     
     
     public int getID(){
